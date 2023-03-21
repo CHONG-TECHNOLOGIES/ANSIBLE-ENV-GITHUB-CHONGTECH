@@ -5,7 +5,7 @@
   vars:
     list_of_kafka_Servers: 
       - zk1
-      #- zk2
+      - zk2
       #- zk3
   tasks:
   #- name: Run the equivalent of "apt-get update" task
