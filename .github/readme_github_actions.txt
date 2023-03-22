@@ -7,6 +7,7 @@
 - Runner service
   sudo ./svc.sh install
   sudo ./svc.sh start
+  sudo ./svc.sh status
   sudo ./svc.sh stop
 
 - Get logs from de runner service after installation
