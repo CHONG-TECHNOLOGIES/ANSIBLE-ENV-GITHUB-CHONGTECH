@@ -168,6 +168,7 @@ Ansible works with OPENSSH and has written by python
   <ins>ansible-galaxy collection install azure.azcollection --force</ins><br>
 
 - Create Service Princiapl to work with ansible<br>
+.https://learn.microsoft.com/en-us/azure/developer/ansible/install-on-linux-vm?tabs=azure-cli#file-credentials<br>
 . https://learn.microsoft.com/en-us/azure/developer/ansible/create-ansible-service-principal?tabs=azure-cli
 
 <br><br>
