@@ -213,6 +213,9 @@ Ansible works with OPENSSH and has written by python
 
 ## ANSIBLE COLLECTIONS
 
+- References:
+  . https://cn-ansibledoc.readthedocs.io/zh_CN/latest/user_guide/collections_using.html<br>
+
 - List all collections <br> 
 <ins>ansible-galaxy collection list</ins>
 
