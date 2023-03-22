@@ -1,0 +1,24 @@
+---
+
+- name: Install software
+  hosts: all
+  vars:
+    packages:
+      - nmap
+      - httpd
+      - php    
+  #vars_files:
+    #- vars/users.xml
+  remote_user: achong
+  #become: true
+  tasks:
+  # We can referenciate variable {{ packages }}
+  - name: Install software task
+  #debug:
+      #msg: "teste debug"
+  #no_log: true #------------ supress output value
+    yum:
+      name: {{ packages }}
+      state: present #absent
+
+
