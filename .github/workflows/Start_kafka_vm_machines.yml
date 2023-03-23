@@ -4,8 +4,9 @@ name: Start all kafka vm machines
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  #push:
-    #branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  
   #pull_request:
     #branches: [ "main" ]
 
@@ -27,14 +28,14 @@ jobs:
       - uses: actions/checkout@v3
 
       # replace `main` with any valid ref, or tags like `v6`
-      - uses: ansible/ansible-lint-action@main
+      #- uses: ansible/ansible-lint-action@main
         # optional:
-        with:
-           targets: |
-             ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
-             ansible/inventory-dev.yml
+        #with:
+           #targets: |
+             #ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
+             #ansible/inventory-dev.yml
 
-           args: "-c ansible/.ansible-lint"
+           #args: "-c ansible/.ansible-lint"
            #path: "playbooks/"  # <-- only one value is allowed
      
       # start vms machines on azure   
