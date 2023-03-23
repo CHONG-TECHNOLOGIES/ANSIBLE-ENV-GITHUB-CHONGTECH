@@ -4,19 +4,19 @@
   #become: true
   vars:
     list_of_kafka_Servers: 
-      #- zk1 
-      #- zk2
-      #- zk3
-      #- brk1
+      - zk1 
+      - zk2
+      - zk3
+      - brk1
       #- brk2
       #- brk3
       - ksqldb1
       - ksqldb2
       - connect1
       - connect2
-      #- schema-registry
-      #- rest-proxy
-      #- control-center
+      - schema-registry
+      - rest-proxy
+      - control-center
   tasks:
   - name: Start all Kafka cluster machines task
     azure_rm_virtualmachine:
