@@ -7,7 +7,7 @@
       - zk1 
       - zk2
       - zk3
-      - brk1
+      #- brk1
       #- brk2
       #- brk3
       #- ksqldb1
