@@ -8,8 +8,8 @@
       - zk2
       - zk3
       - brk1
-      #- brk2
-      #- brk3
+      - brk2
+      - brk3
       - ksqldb1
       - ksqldb2
       - connect1
