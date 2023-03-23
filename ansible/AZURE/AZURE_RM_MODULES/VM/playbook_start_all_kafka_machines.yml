@@ -4,14 +4,20 @@
   #become: true
   vars:
     list_of_kafka_Servers: 
-      - zk1
+      - zk1 
       - zk2
       - zk3
+      - brk1
+      - brk2
+      - brk3
+      - ksqldb1
+      - ksqldb2
+      - connect1
+      - connect2
+      - schema-registry
+      - rest-proxy
+      - control-center
   tasks:
-  #- name: Run the equivalent of "apt-get update" task
-    #apt:
-      #update_cache: yes
-
   - name: Start all Kafka cluster machines task
     azure_rm_virtualmachine:
       resource_group: kafka-cluster-ansible
