@@ -16,13 +16,13 @@
       - connect2
       - schema-registry
       - rest-proxy
-      - controlcenter
+      - control-center
   tasks:
   - name: Start all Kafka cluster machines task
     azure_rm_virtualmachine:
       resource_group: kafka-cluster-ansible
       name: "{{ item }}"
-      started: true
+      started: false
       state: present
     loop: "{{ list_of_kafka_Servers }}"
       
