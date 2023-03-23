@@ -40,6 +40,6 @@ jobs:
       - name: Run ansible script
         shell: bash 
         run: 
-          ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
+          ansible-playbook -vvv -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
       
       

@@ -4,12 +4,12 @@
   #become: true
   vars:
     list_of_kafka_Servers: 
-      - zk1 
-      - zk2
-      - zk3
+      #- zk1 
+      #- zk2
+      #- zk3
       - brk1
-      #- brk2
-      #- brk3
+      - brk2
+      - brk3
       #- ksqldb1
       #- ksqldb2
       #- connect1
