@@ -8,15 +8,15 @@
       - zk2
       - zk3
       - brk1
-      - brk2
-      - brk3
-      - ksqldb1
-      - ksqldb2
-      - connect1
-      - connect2
-      - schema-registry
-      - rest-proxy
-      - control-center
+      #- brk2
+      #- brk3
+      #- ksqldb1
+      #- ksqldb2
+      #- connect1
+      #- connect2
+      #- schema-registry
+      #- rest-proxy
+      #- control-center
   tasks:
   - name: Start all Kafka cluster machines task
     azure_rm_virtualmachine:
