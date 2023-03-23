@@ -1,5 +1,5 @@
 # start all kafka vm machines
-name: Start all kafka vm machines
+name: Stop all kafka vm machines
 
 # Controls when the workflow will run
 on:
@@ -40,6 +40,6 @@ jobs:
       - name: Run ansible script
         shell: bash 
         run: 
-          ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
+          ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_stop_all_kafka_machines.yml
       
       
