@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "main" ]
   
-  pull_request:
+  #pull_request:
     #branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -50,12 +50,21 @@ jobs:
             name: playbooks
             path: ansible
       
-      # start vms machines on azure   
+        # start vms machines on azure   
         - name: Run ansible script to start vms machines on azure
           shell: bash 
           run: 
             ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
 
-
+        
+        # We can use another option to run playbooks
+        # https://github.com/dawidd6/action-ansible-playbook
+        #- uses: dawidd6/action-ansible-playbook@v2
+          #with:
+            #playbook: playbook.yml
+            #directory: ansible
+            #options: |
+              #--inventory inventory-test.yml
+              #--extra-vars "test_ssh_password=${{ Secrets.TEST_SSH_PASSWORD }}"
 
       
