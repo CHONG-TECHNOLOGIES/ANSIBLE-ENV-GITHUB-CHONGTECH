@@ -2,12 +2,12 @@
 name: Start all kafka vm machines
 
 # Controls when the workflow will run
-on:
+on: 
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   
-  #pull_request:
+  pull_request:
     #branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -16,32 +16,46 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a jobs 
-  build:
-    # The type of runner that the job will run on
-    runs-on: 
-      - self-hosted #ubuntu-latest
-      - ansible-vm-runner
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # replace `main` with any valid ref, or tags like `v6`
-      #- uses: ansible/ansible-lint-action@main
-        # optional:
-        #with:
-           #targets: |
-             #ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
-             #ansible/inventory-dev.yml
-
-           #args: "-c ansible/.ansible-lint"
-           #path: "playbooks/"  # <-- only one value is allowed
-     
-      # start vms machines on azure   
-      - name: Run ansible script to start vms machines on azure
-        shell: bash 
-        run: 
-          ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
+    Initial-Steps:
+      name: Initial-Steps
       
+      # The type of runner that the job will run on
+      runs-on: 
+        - self-hosted #ubuntu-latest
+        - ansible-vm-runner
+
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v3
+
+        - name: Publish ansible Playbooks to an Artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: playbooks
+            path: ansible
+     
+    Start-Vm:  
+      name: Start-Vm
+      needs: Initial-Steps
+
+      # The type of runner that the job will run on
+      runs-on: 
+        - self-hosted #ubuntu-latest
+        - ansible-vm-runner
+
+      steps:  
+        - uses: actions/download-artifact@v3
+          with:
+            name: playbooks
+            path: ansible
+      
+      # start vms machines on azure   
+        - name: Run ansible script to start vms machines on azure
+          shell: bash 
+          run: 
+            ansible-playbook -i ansible/inventory-dev.yml ansible/AZURE/AZURE_RM_MODULES/VM/playbook_start_all_kafka_machines.yml
+
+
+
       
