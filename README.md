@@ -88,6 +88,11 @@ Ansible works with OPENSSH and has written by python
 
 <br>
 
+- List pip3 outdated <br>
+<ins>pip3 list  --outdated</ins>
+
+<br>
+
 - Install Ansible <br>
 <ins>sudo apt -y install ansible</ins> or <br>
 <ins>pip3 install "ansible"</ins> or<br>
