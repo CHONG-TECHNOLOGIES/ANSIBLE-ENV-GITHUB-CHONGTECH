@@ -88,6 +88,11 @@ Ansible works with OPENSSH and has written by python
 
 <br>
 
+- List pip3 outdated <br>
+<ins>pip3 list  --outdated</ins>
+
+<br>
+
 - Install Ansible <br>
 <ins>sudo apt -y install ansible</ins> or <br>
 <ins>pip3 install "ansible"</ins> or<br>
@@ -113,6 +118,9 @@ Ansible works with OPENSSH and has written by python
 <br>
 
 ### GET DOC
+- <ins>ansible-doc -t connection -l</ins>     ------------> list connections we can made
+<br>
+
 - <ins>ansible-doc -l | grep search_word</ins>     ------------> list all modules
 <br>
 
@@ -125,23 +133,23 @@ Ansible works with OPENSSH and has written by python
 
 <br>
 
-- <ins>ansible all -m service -i inventory  --private-key ~/.ssh/kafka_key.pem  -a "state=started name=sshd"</ins>----------> run module services on all destinations hosts to check if sshd service was starded
+- <ins>ansible all -m service -i inventory --dif --private-key ~/.ssh/kafka_key.pem  -a "state=started name=sshd"</ins>----------> run module services on all destinations hosts to check if sshd service was starded
 
 <br>
 
-- <ins>ansible all -m user -i inventory  --private-key ~/.ssh/kafka_key.pem  -a "name=user_name uuid=4000 state=present password=password"</ins>----------> run module user to create new user on all destinations hosts if not exists
+- <ins>ansible all -m user -i inventory --diff --private-key ~/.ssh/kafka_key.pem  -a "name=user_name uuid=4000 state=present password=password"</ins>----------> run module user to create new user on all destinations hosts if not exists
 
 <br>
 
-- <ins>ansible all -m package -i inventory  --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed
+- <ins>ansible all -m package -i inventory --diff --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed
 
 <br>
 
-- <ins>ansible all -m yum -i inventory  --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed at linux distro
+- <ins>ansible all -m yum -i inventory --dif  --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed at linux distro
 
 <br>
 
-- <ins>ansible all -m apt -i inventory  --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed at ubuntu distro
+- <ins>ansible all -m apt -i inventory --diff  --private-key ~/.ssh/kafka_key.pem -b -a "name=httpd state=present"</ins>----------> run module package on all destinations hosts to check if httpd package was installed at ubuntu distro
 
 
 <br><br>
