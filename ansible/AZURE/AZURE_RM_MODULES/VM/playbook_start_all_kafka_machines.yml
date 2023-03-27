@@ -10,7 +10,7 @@
       #- brk1
       #- brk2
       #- brk3
-      - ksqldb1
+      #- ksqldb1
       - ksqldb2
       - connect1
       - connect2
