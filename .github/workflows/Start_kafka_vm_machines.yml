@@ -7,7 +7,7 @@ on:
   #push:
     #branches: [ "main" ]
   
-  #ull_request:
+  #pull_request:
     #types: [closed]
     #branches: [ "main" ]
 
@@ -28,7 +28,7 @@ jobs:
         - self-hosted #ubuntu-latest
         - ansible-vm-runner
 
-      if: contains(github.head_ref, 'start') && github.event.review.state == 'approved'
+      if: github.event.review.state == 'approved'
 
       # Steps represent a sequence of tasks that will be executed as part of the job
       steps:
@@ -50,7 +50,7 @@ jobs:
         - self-hosted #ubuntu-latest
         - ansible-vm-runner
 
-      if: contains(github.head_ref, 'start') && github.event.review.state == 'approved'
+      if: github.event.review.state == 'approved'
 
       steps:  
         - uses: actions/download-artifact@v3
