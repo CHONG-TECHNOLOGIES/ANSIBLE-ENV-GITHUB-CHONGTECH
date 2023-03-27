@@ -7,7 +7,7 @@ on:
   #push:
     #branches: [ "main" ]
   
-  #pull_request:
+  #ull_request:
     #types: [closed]
     #branches: [ "main" ]
 
@@ -50,7 +50,7 @@ jobs:
         - self-hosted #ubuntu-latest
         - ansible-vm-runner
 
-      if: contains(github.head_ref, 'start')
+      if: contains(github.head_ref, 'start') && github.event.review.state == 'approved'
 
       steps:  
         - uses: actions/download-artifact@v3
