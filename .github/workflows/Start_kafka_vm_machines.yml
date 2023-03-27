@@ -4,12 +4,12 @@ name: Start all kafka vm machines
 # Controls when the workflow will run
 on: 
   # Triggers the workflow on push or pull request events but bases on branchs
-  #push:
-    #branches: [ "main" ]
+  push:
+    branches: ["Feature/Workflow_star_all_vm"]
   
-  #pull_request:
+  pull_request:
     #types: [closed]
-    #branches: [ "main" ]
+    branches: [ "Feature/Workflow_star_all_vm"]
 
   pull_request_review:
     types: [submitted]
