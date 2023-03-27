@@ -7,7 +7,7 @@
       - zk1 
       - zk2
       - zk3
-      - brk1
+      #- brk1
       #- brk2
       #- brk3
       #- ksqldb1
@@ -22,21 +22,7 @@
     azure_rm_virtualmachine:
       resource_group: kafka-cluster-ansible
       #name: "{{ item }}"
-      #name: "{{ list_of_kafka_Servers }}"
-      name:
-        - zk1 
-        - zk2
-        - zk3
-        - brk1
-        #- brk2
-        #- brk3
-        #- ksqldb1
-        - ksqldb2
-        - connect1
-        - connect2
-        - schema-registry
-        - rest-proxy
-        - controlcenter   
+      name: "{{ list_of_kafka_Servers }}"
       started: true
       state: present
     #loop: "{{ list_of_kafka_Servers }}"
