@@ -16,7 +16,7 @@
       - connect2
       - schema-registry
       - rest-proxy
-      - control-center
+      - controlcenter
   tasks:
   - name: Start all Kafka cluster machines task
     azure_rm_virtualmachine:
