@@ -9,12 +9,12 @@ on:
   
   pull_request:
     #types: [closed]
-    branches: [ "Feature/Workflow_Stop_all_vm"]
+    branches: ["Feature/Workflow_Stop_all_vm"]
 
   pull_request_review:
     types: [submitted]
-    branches: [ "Feature/Workflow_Stop_all_vm"]
-    
+    branches: ["Feature/Workflow_Stop_all_vm"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
